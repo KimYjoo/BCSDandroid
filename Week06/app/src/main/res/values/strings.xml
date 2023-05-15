@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Week06</string>
+    <string name="longClickDialog_editTextHint">수정할 이름을 입력하세요.</string>
+    <string name="positive">확인</string>
+    <string name="negative">취소</string>
+
+</resources>
