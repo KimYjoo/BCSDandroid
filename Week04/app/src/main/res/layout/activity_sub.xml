@@ -1,29 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-<TextView
-    android:id="@+id/txt_randDescription"
-    android:layout_width="300dp"
-    android:layout_height="wrap_content"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.3"
-    app:layout_constraintTop_toTopOf="parent"
-    android:layout_marginTop="50dp"
-    android:text = "@string/rand_message"
-    android:textSize="40sp"
-    ></TextView>
-    <TextView
-        android:id="@+id/txt_randNum"
+    tools:context=".MainActivity">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="200dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="500dp"
+        >
+
+    </androidx.constraintlayout.widget.Guideline>
+    <TextView
+        android:id="@+id/txt_countNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        android:layout_marginBottom="200dp"
         android:text="0"
-        android:textSize="100sp"
+        android:textSize="50sp"
+        android:gravity="center"
         ></TextView>
+    <Button
+        android:id="@+id/btn_count"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/btn2"
+        >
+
+    </Button>
+    <Button
+        android:id="@+id/btn_toast"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/guideline"
+        app:layout_constraintEnd_toStartOf="@id/btn_count"
+        android:layout_marginEnd="30dp"
+        android:text="@string/btn1"
+        ></Button>
+    <Button
+        android:id="@+id/btn_rand"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/guideline"
+        app:layout_constraintStart_toEndOf="@id/btn_count"
+        android:layout_marginStart="30dp"
+        android:text="@string/btn3"
+        ></Button>
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 class SubActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sub)
+        setContentView(R.layout.activity_fragment)
         val intent = getIntent()
         val descriptionText = findViewById<TextView>(R.id.txt_randDescription)
         var randnum = intent.getIntExtra("RandNum",0)

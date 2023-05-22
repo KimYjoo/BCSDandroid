@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Week04</string>
+    <string name="btn1">toast</string>
+    <string name="btn2">count</string>
+    <string name="btn3">random</string>
+    <string name="t_message">Hi!</string>
+    <string name="rand_message">here is a random number between 0 and %d</string>
+
+</resources>

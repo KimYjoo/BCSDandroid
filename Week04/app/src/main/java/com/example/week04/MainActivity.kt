@@ -1,32 +1,31 @@
 package com.example.week04
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import com.example.week04.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val countNum = findViewById<TextView>(R.id.txt_countNum)
-        val increase = findViewById<Button>(R.id.btn_count)
+        setContentView(binding.root)
         var num = 0;
-        val toastM = findViewById<Button>(R.id.btn_toast)
-        val rand = findViewById<Button>(R.id.btn_rand)
-        increase.setOnClickListener{
+
+        binding.btnCount.setOnClickListener{
             num++
-            countNum.setText(num.toString())
+            binding.txtCountNum.setText(num.toString())
         }
-        toastM.setOnClickListener{
-            Toast.makeText(getApplicationContext(), getString(R.string.t_message), Toast.LENGTH_SHORT).show()
+        binding.btnToast.setOnClickListener{
+            //FragmentView(Fragment_1);
         }
-        rand.setOnClickListener{
-            val nextIntent = Intent(this, SubActivity::class.java)
-            nextIntent.putExtra("RandNum", num)
-            startActivity(nextIntent)
+        binding.btnRand.setOnClickListener{
+            val newFragment = Fragment1()
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.add(R.id.container, newFragment)
+                .addToBackStack(null)
+                .commit()
         }
 
 
